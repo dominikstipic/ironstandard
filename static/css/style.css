@@ -1,0 +1,58 @@
+body {
+    color: #d7d7d8;
+    font-family: "Berkeley Mono", "drewtype", monospace;
+    font-size: 16px;
+    background: #050705;
+  }
+  
+  header {
+    text-align: center;
+  }
+  
+  h1 {
+    margin-top: 50px;
+  }
+  
+  h3 {
+    margin-top: 100px;
+  }
+  
+  a {
+    color: rgb(5, 146, 5);
+  }
+  
+  .main {
+    border-color: #d7d7d8;
+    border: 1px solid white;
+  }
+  
+  body div {
+    margin: 0 auto;
+    max-width: 80%;
+    max-height: 100%;
+  }
+  
+  .navbar__left {
+    margin-left: 0px;
+  }
+  
+  .navbar__right {
+    margin-right: 5px;
+  }
+  
+  .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px;
+      max-width: 1000px;
+      margin: auto;
+  }
+  
+  .fitness {
+    display: grid;
+  }
+  
+  #myDiv {
+    align-items: center;
+  }
