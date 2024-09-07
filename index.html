@@ -3,10 +3,25 @@
   <title>Dominik Stipić</title>
   <link rel="icon" href="favicon.ico" />
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
+  <style>
+    #exitButton {
+      float: right;
+      top: 20px; 
+      background-color: #da1c15; 
+      color: white; 
+      padding: 10px 15px; 
+      border-radius: 20px; 
+    }
+  </style>
 </head>
 <body>
 
   <div class="main">
+    <form method="get" action="/logout">
+      <button id="exitButton" type="submit">X</button>
+    </form>
+    
+
     <header>
       <h1>Iron Standard</h1>
       <img src="static/figs/logo.jpg" width="15%">
@@ -59,8 +74,6 @@
 
     <iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=0%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&amp;layer=mapnik" style="border: 1px solid black"></iframe>
     <br/><small><a href="https://www.openstreetmap.org/#map=11/44.8264/15.2954"></a></small>
-
-
 
   </div>
 </body>
