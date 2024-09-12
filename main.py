@@ -1,11 +1,20 @@
 import logging
 from flask import Flask, render_template, request
 from waitress import serve
+from OpenSSL import SSL
 
 app = Flask(__name__, template_folder=".")
 logger = logging.getLogger("doms")
 logging.basicConfig(filename="example.log", level=logging.INFO)
 logging.getLogger('werkzeug').disabled = True
+
+CERT_PATH = "/etc/letsencrypt/live/ironstandard.org"
+private_key = f"{CERT_PATH}/cert.pem"
+key_key = f"{CERT_PATH}/privkey.pem"
+
+context = SSL.Context(SSL.TLSv1_2_METHOD)
+context.use_privatekey_file(private_key)
+context.use_certificate_file(key_key)
 
 #######################################
 
