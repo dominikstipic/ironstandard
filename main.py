@@ -9,12 +9,12 @@ logging.basicConfig(filename="example.log", level=logging.INFO)
 logging.getLogger('werkzeug').disabled = True
 
 CERT_PATH = "/etc/letsencrypt/live/ironstandard.org"
-private_key = f"{CERT_PATH}/cert.pem"
-key_key = f"{CERT_PATH}/privkey.pem"
+private_key = f"{CERT_PATH}/privkey.pem"
+cert_key = f"{CERT_PATH}/cert.pem"
 
 context = SSL.Context(SSL.TLSv1_2_METHOD)
 context.use_privatekey_file(private_key)
-context.use_certificate_file(key_key)
+context.use_certificate_file(cert_key)
 
 #######################################
 
