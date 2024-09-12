@@ -1,7 +1,6 @@
 import logging
 from flask import Flask, render_template, request
 from waitress import serve
-from OpenSSL import SSL
 
 app = Flask(__name__, template_folder=".")
 logger = logging.getLogger("doms")
@@ -11,10 +10,6 @@ logging.getLogger('werkzeug').disabled = True
 CERT_PATH = "/etc/letsencrypt/live/ironstandard.org"
 private_key = f"{CERT_PATH}/privkey.pem"
 cert_key = f"{CERT_PATH}/cert.pem"
-
-context = SSL.Context(SSL.TLSv1_2_METHOD)
-context.use_privatekey_file(private_key)
-context.use_certificate_file(cert_key)
 
 #######################################
 
@@ -61,5 +56,9 @@ def demo():
 
 if __name__ == "__main__":
     print("Starting server!")
-    serve(app, host="0.0.0.0", port=81)
+    CERT_PATH = "/etc/letsencrypt/live/ironstandard.org"
+    private_key = f"{CERT_PATH}/privkey.pem"
+    cert_key = f"{CERT_PATH}/cert.pem"
+
+    app.run(host='0.0.0.0', port=443, ssl_context=(cert_key,  private_key))
     #app.run(host="127.0.0.1", port=8080, debug=True)
